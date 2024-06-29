@@ -1,0 +1,234 @@
+@import "../mixins.scss";
+@import "../variables.scss";
+
+.contacts {
+    position: relative;
+    margin-top: 120px;
+    .contacts__wrap {
+        padding: 0 35px 91px 52px;
+        display: flex;
+        gap: 68px;
+        .contacts__img {
+            height: 100%;
+            min-width: 400px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .contacts__connect {
+            width: 100%;
+            .contacts__subtitle {
+                padding-left: 12px;
+                font-weight: 700;
+                font-size: 16px;
+                color: #000;
+                position: relative;
+                &::before {
+                    @include circle;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+            .contacts__title {
+                margin-top: 6px;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 167%;
+                color: #000;
+            }
+            .contacts__divider {
+                @include divider;
+                margin-top: 4px;
+            }
+            .contacts__method {
+                margin-top: 20px;
+                font-weight: 700;
+                font-size: 14px;
+                color: #000;
+            }
+            .contacts__links {
+                margin-top: 20px;
+                display: flex;
+                gap: 25px;
+                height: 30px;
+                .contacts__link {
+                    cursor: pointer;
+                    &:hover {
+                        svg {
+                            path {
+                                transition: all 0.5s ease-in;
+                                fill: $color;
+                            }
+                        }
+                    }
+                }
+            }
+            .contacts__leave-data {
+                margin-top: 20px;
+                font-weight: 700;
+                font-size: 14px;
+                color: #000;
+            }
+            .contacts__form {
+                margin-top: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                .contacts__input {
+                    @include input;
+                }
+                .contacts__form-wrap {
+                    width: 100%;
+                    display: flex;
+                    gap: 25px;
+                    .contacts__input-name {
+                        height: 45px;
+                        &::before {
+                            @include label;
+                            content: "Ваше имя";
+                        }
+                        input:focus::placeholder {
+                            opacity: 0;
+                        }
+                    }
+                    .error-name {
+                        &::after {
+                            @include errorMessage;
+                            content: "Введите корректное имя";
+                        }
+                    }
+                    .error-mail {
+                        &::after {
+                            @include errorMessage;
+                            content: "Введите правильный e-mail";
+                        }
+                    }
+
+                    .contacts__input-mail {
+                        height: 45px;
+                        &::before {
+                            @include label;
+                            content: "Ваша почта";
+                        }
+                    }
+                }
+                .contacts__input-textarea {
+                    width: 100%;
+                    height: 190px;
+                    textarea {
+                        font-size: 14px;
+                        font-weight: 500;
+                        width: 100%;
+                        height: 100%;
+                        padding: 5px 20px 5px 20px;
+
+                        border: 1px solid black;
+                        &::placeholder {
+                            font-weight: 500;
+                            font-size: 12px;
+                            color: #000;
+                        }
+                    }
+                    &::before {
+                        @include label;
+                        content: "Ваше сообщение";
+                    }
+                }
+                .error-textarea {
+                    &::after {
+                        @include errorMessage;
+                        top: 190px;
+                        content: "Оставьте сообщение";
+                    }
+                }
+
+                .contacts__send {
+                    display: flex;
+                    gap: 15px;
+                    .contacts__policy {
+                        display: flex;
+                        position: relative;
+                        align-items: center;
+                        gap: 12px;
+                        .contacts__custom-checkbox {
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            input {
+                                display: none;
+                            }
+                            input[type="checkbox"]:checked
+                                + .contacts__checkmark {
+                                background-color: $color;
+                                &::after {
+                                    display: block;
+                                }
+                            }
+                            .contacts__checkmark {
+                                width: 11px;
+                                height: 11px;
+                                border: 1px solid black;
+                                position: relative;
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    display: none;
+                                    left: 2px;
+                                    top: 0px;
+                                    width: 5px;
+                                    height: 8px;
+                                    border: solid white;
+                                    border-width: 0 2px 2px 0;
+                                    transform: rotate(45deg);
+                                }
+                            }
+                        }
+                        .contacts__text {
+                            font-size: 12px;
+
+                            a {
+                                color: #2306d6;
+                            }
+                        }
+                    }
+                    .error-checkbox {
+                        &::after {
+                            @include errorMessage;
+                            top: 30px;
+                            left: 23px;
+                            content: "Ознакомтесь с политикой конфиденциальности";
+                        }
+                    }
+                    .contacts__button {
+                        @include button;
+                        background-color: $color;
+                        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+                        width: 219px;
+                    }
+                }
+            }
+        }
+    }
+    .contacts__form-send {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        font-weight: 700;
+        font-size: 14px;
+        color: #000;
+        transform: translate(-50%);
+        width: 290px;
+        height: 100px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+        background: #ffa501;
+    }
+    .contacts__form-send-visible {
+        display: flex;
+    }
+}

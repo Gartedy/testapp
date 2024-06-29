@@ -1,0 +1,65 @@
+@import "./variables.scss";
+
+@mixin circle {
+    position: absolute;
+    content: "";
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: $color;
+    z-index: -2;
+}
+@mixin divider {
+    width: 60px;
+    height: 3px;
+    background-color: $color;
+}
+@mixin label {
+    position: absolute;
+    content: "";
+    padding: 0 8px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    color: #000;
+    background-color: white;
+    top: -9px;
+    left: 20px;
+}
+@mixin input {
+    width: 100%;
+    position: relative;
+    height: 45px;
+    input {
+        font-size: 14px;
+        font-weight: 500;
+        width: 100%;
+        padding: 5px 20px 5px 20px;
+        height: 100%;
+        border: 1px solid black;
+        &::placeholder {
+            font-weight: 500;
+            font-size: 12px;
+            color: #000;
+        }
+    }
+}
+@mixin errorMessage {
+    display: block;
+    top: 45px;
+    left: 0;
+    position: absolute;
+    color: red;
+    font-size: 12px;
+}
+@mixin button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 135px;
+    height: 45px;
+    font-size: 14px;
+    background-color: transparent;
+    font-weight: 700;
+    cursor: pointer;
+}

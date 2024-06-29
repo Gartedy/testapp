@@ -1,0 +1,120 @@
+@import "../mixins.scss";
+@import "../variables.scss";
+
+.exp {
+    margin-top: 120px;
+    .exp__subtitle {
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 16px;
+        color: #000;
+        position: relative;
+        &::before {
+            @include circle;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .exp__title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 167%;
+        color: #000;
+    }
+    .exp__divider {
+        @include divider;
+        margin: 25px auto;
+    }
+    .exp__wrap {
+        margin-top: 60px;
+        padding: 0 89px 11px 65px;
+        display: flex;
+        justify-content: space-between;
+        row-gap: 45px;
+        .exp__block-title {
+            padding-left: 43px;
+            font-weight: 700;
+            font-size: 20px;
+            color: #000;
+            line-height: 1;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "";
+                left: -7px;
+                bottom: 0;
+                width: 15px;
+                height: 15px;
+                border-radius: 100%;
+                background-color: $color;
+            }
+        }
+        .exp__block {
+            .exp__item {
+                padding: 51px 0 0 43px;
+                border-left: 1px solid black;
+                .exp__item-head {
+                    margin-left: 18px;
+                    display: flex;
+                    gap: 18px;
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: -62px;
+                        width: 60px;
+                        height: 1px;
+                        z-index: -5;
+                        background-color: black;
+                    }
+                    .exp__item-logo {
+                        width: 25px;
+                        height: 39px;
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: flex-end;
+                        position: relative;
+
+                        &::before {
+                            @include circle;
+                            top: 50%;
+                            left: -18px;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    .exp__item-wrap {
+                        display: flex;
+                        flex-direction: column;
+                        .exp__item-name {
+                            font-weight: 700;
+                            font-size: 14px;
+                            line-height: 1.5;
+                            color: #000;
+                        }
+                        .exp__item-subname {
+                            font-weight: 500;
+                            font-size: 12px;
+                            color: #000;
+                            line-height: 1.5;
+                        }
+                    }
+                }
+                .exp__item-descr {
+                    max-width: 375px;
+                    margin-top: 12px;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 1.5;
+                    color: #000;
+                }
+            }
+        }
+    }
+}

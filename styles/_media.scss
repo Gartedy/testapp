@@ -1,0 +1,406 @@
+@media (max-width: 1400px) and (min-width: 1300px) {
+    .promo {
+        .promo-social {
+            left: 2%;
+        }
+    }
+}
+
+@media (max-width: 1300px) and (min-width: 0) {
+    .promo {
+        .promo-social {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 993px) {
+    .container {
+        width: 960px;
+        margin: 0 auto;
+    }
+    .contacts {
+        .contacts__wrap {
+            height: 100%;
+            .contacts__img {
+                height: auto;
+                max-width: 400px;
+                img {
+                    min-width: 100%;
+                    min-height: 100%;
+                }
+            }
+            .contacts__connect {
+                .contacts__form {
+                    .contacts__send {
+                        flex-direction: column-reverse;
+                        .error-checkbox {
+                            &::after {
+                                top: 15px;
+                                left: 23px;
+                            }
+                        }
+                        .contacts__button {
+                            @include button;
+                            background-color: $color;
+                            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+                            width: 219px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    .container {
+        width: 750px;
+        margin: 0 auto;
+    }
+    .promo {
+        .promo__title {
+            font-size: 40px;
+        }
+
+        .promo-overlay {
+            .promo-overlay__menu {
+                width: 315px;
+                .promo-overlay__menu-item {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .exp {
+        margin-top: 80px;
+        .exp__wrap {
+            margin-top: 60px;
+            padding: 0 20px 11px 20px;
+            display: flex;
+            justify-content: space-between;
+            row-gap: 40px;
+            .exp__block {
+                .exp__item {
+                    padding: 41px 10px 0 43px;
+                }
+            }
+        }
+    }
+    .contacts {
+        margin-top: 80px;
+        .contacts__wrap {
+            padding: 0 30px 60px 30px;
+            display: flex;
+            gap: 15px;
+
+            .contacts__img {
+                flex: 1;
+                min-width: auto;
+                max-width: 45%;
+                height: auto;
+            }
+            .contacts__connect {
+                flex: 1;
+                max-width: auto;
+                .contacts__title {
+                    font-size: 30px;
+                    line-height: 160%;
+                }
+
+                .contacts__form {
+                    margin-top: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    .contacts__input {
+                        @include input;
+                    }
+                    .contacts__form-wrap {
+                        width: 100%;
+                        display: flex;
+                        gap: 25px;
+                        .contacts__input-name {
+                            height: 45px;
+                            &::before {
+                                @include label;
+                                content: "Ваше имя";
+                            }
+                        }
+                        .contacts__input-mail {
+                            height: 45px;
+                            &::before {
+                                @include label;
+                                content: "Ваша почта";
+                            }
+                        }
+                    }
+                    .contacts__input-textarea {
+                        height: 160px;
+                    }
+                    .error-textarea {
+                        &::after {
+                            @include errorMessage;
+                            top: 160px;
+                            content: "Оставьте сообщение";
+                        }
+                    }
+                    .contacts__send {
+                        flex-direction: column-reverse;
+                        .error-checkbox {
+                            &::after {
+                                top: 15px;
+                                left: 23px;
+                            }
+                        }
+                        .contacts__button {
+                            @include button;
+                            background-color: $color;
+                            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+                            width: 219px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) and (min-width: 578px) {
+    .container {
+        width: 540px;
+        margin: 0 auto;
+    }
+    .promo {
+        padding: 156px 0 0 0;
+        height: 100vh;
+        position: relative;
+        z-index: 2;
+        background: url(../img/promo-bg.jpg) no-repeat 50% / cover;
+
+        .promo__title {
+            max-width: 532px;
+            font-size: 36px;
+        }
+        .promo-overlay {
+            .promo-overlay__menu {
+                width: 300px;
+                .promo-overlay__menu-item {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .exp {
+        margin-top: 60px;
+
+        .exp__title {
+            font-size: 30px;
+        }
+        .exp__wrap {
+            margin-top: 40px;
+            flex-direction: column;
+        }
+    }
+    .contacts {
+        margin-top: 60px;
+        .contacts__wrap {
+            .contacts__img {
+                display: none;
+            }
+            .contacts__connect {
+                .contacts__title {
+                    font-size: 30px;
+                }
+
+                .contacts__form {
+                    .contacts__send {
+                        flex-direction: column-reverse;
+                        align-items: center;
+                        gap: 20px;
+                        .error-checkbox {
+                            &::after {
+                                top: 15px;
+                                left: 23px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 577px) and (min-width: 320px) {
+    .container {
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .promo {
+        background: url(../img/promo-bg.jpg) no-repeat 54% / cover;
+
+        .promo__name {
+            margin-left: 20px;
+        }
+        .promo__title {
+            margin: 10px 0 0 10px;
+            max-width: 300px;
+            font-size: 26px;
+        }
+        .promo__buttons-wrap {
+            margin: 25px 0 0 10px;
+        }
+        .promo-hamburger {
+            right: 20px;
+        }
+        .promo-overlay {
+            .promo-overlay__menu {
+                width: 250px;
+                padding: 140px 0 50px 20px;
+
+                .promo-overlay__menu-item {
+                    display: flex;
+                    align-items: center;
+                    height: 36px;
+                    padding-left: 35px;
+                    font-weight: 700;
+                    font-size: 24px;
+                    color: #fff;
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        border-radius: 100%;
+                        width: 15px;
+                        height: 15px;
+                        border: 1px solid black;
+                    }
+                    &:hover {
+                        transition: all 0.5s ease-out;
+                        color: black;
+                        &::before {
+                            transition: all 0.5s ease-out;
+                            border: 1px solid white;
+                            background-color: white;
+                        }
+                    }
+                }
+                .promo-overlay__links {
+                    margin-top: auto;
+                    display: flex;
+                    justify-content: center;
+                    gap: 15px;
+                    .promo-overlay__link {
+                        &:hover {
+                            svg {
+                                path {
+                                    transition: all 0.5s ease-out;
+                                    fill: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .exp {
+        margin-top: 40px;
+        padding: 0 12px 0 8px;
+
+        .exp__title {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .exp__divider {
+            margin: 15px auto;
+        }
+        .exp__wrap {
+            margin-top: 40px;
+            padding: 0 0 0 8px;
+            flex-direction: column;
+
+            .exp__block {
+                .exp__item {
+                    padding: 45px 0 0 43px;
+                    border-left: 1px solid black;
+                    .exp__item-head {
+                        .exp__item-logo {
+                            height: auto;
+                            display: flex;
+                            align-items: flex-end;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contacts {
+        padding: 0 10px 50px;
+        margin-top: 40px;
+        .contacts__wrap {
+            padding: 0;
+            .contacts__img {
+                display: none;
+            }
+            .contacts__connect {
+                width: 100%;
+
+                .contacts__title {
+                    margin-top: 20px;
+                    font-size: 24px;
+                }
+                .contacts__divider {
+                    @include divider;
+                    margin-top: 15px;
+                }
+                .contacts__form {
+                    margin-top: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0;
+                    .contacts__input {
+                        @include input;
+                    }
+                    .contacts__form-wrap {
+                        width: 100%;
+                        flex-direction: column;
+                        gap: 29px;
+                    }
+                    .contacts__input-textarea {
+                        margin-top: 27px;
+                        height: 143px;
+                    }
+                    .error-textarea {
+                        &::after {
+                            @include errorMessage;
+                            top: 143px;
+                            content: "Оставьте сообщение";
+                        }
+                    }
+                    .contacts__send {
+                        margin-top: 20px;
+                        flex-direction: column-reverse;
+                        align-items: center;
+                        gap: 20px;
+                        .contacts__text {
+                            max-width: 180px;
+                        }
+                        .error-checkbox {
+                            &::after {
+                                display: flex;
+                                width: 300px;
+                                top: 32px;
+                                left: calc((300px - 180px) / -2);
+                                justify-content: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
